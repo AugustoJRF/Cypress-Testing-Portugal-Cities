@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-describe('Lisboa page', () => {
+describe('Lisbon page', () => {
     
     beforeEach(() => {
         cy.visit('/')
     })
 
-    it('Check Lisboa first container information', () => {
+    it('Check Lisbon first container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(1)')
@@ -16,7 +16,7 @@ describe('Lisboa page', () => {
             .should('be.visible')
     })
         
-    it('Check Lisboa second container information', () => {
+    it('Check Lisbon second container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(2)')
@@ -26,7 +26,7 @@ describe('Lisboa page', () => {
             .should('be.visible')
     })
             
-    it('Check Lisboa third container information', () => {
+    it('Check Lisbon third container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(3)')
@@ -36,7 +36,7 @@ describe('Lisboa page', () => {
             .should('be.visible')
     })
     
-    it('Check Lisboa fourth container information', () => {
+    it('Check Lisbon fourth container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(4)')
@@ -46,29 +46,29 @@ describe('Lisboa page', () => {
             .should('be.visible')
     })
 
-    it('Calculate the average price to visit Lisboa', () => {
+    it('Calculate the average price to visit Lisbon', () => {
 
         cy.get(':nth-child(4) > .nav-link').click()
-        cy.get('[onclick="Resetlisboa()"]').click()
+        cy.get('[onclick="Resetlisbon()"]').click()
 
-            const averagePriceForLisboa = '65'
-            const priceLisboa1 = Math.floor(Math.random() * 99) + 1
-            const priceLisboa2 = Math.floor(Math.random() * 99) + 1
+            const averagePriceForLisbon = '65'
+            const priceLisbon1 = Math.floor(Math.random() * 99) + 1
+            const priceLisbon2 = Math.floor(Math.random() * 99) + 1
         
-        cy.get('#lisboa1').type(priceLisboa1)
-        cy.get('#lisboa2').type(priceLisboa2)
+        cy.get('#lisbon1').type(priceLisbon1)
+        cy.get('#lisbon2').type(priceLisbon2)
         
-            const averagePriceLisboaResult = ((averagePriceForLisboa * priceLisboa1) * priceLisboa2)
+            const averagePriceLisbonResult = ((averagePriceForLisbon * priceLisbon1) * priceLisbon2)
         
         cy.clickOnCalculateButton()
         cy.get('#alert1 > p')
-            .should('contain', `The average price is: ${averagePriceLisboaResult}`)
+            .should('contain', `The average price is: ${averagePriceLisbonResult}`)
     })
 
     it('The modal should not close when clicking outside', () => {
             
         cy.get(':nth-child(4) > .nav-link').click()
-        cy.get('[onclick="Resetlisboa()"]').click()
+        cy.get('[onclick="Resetlisbon()"]').click()
         cy.get('#staticBackdrop').click()
         cy.get('.modal-content').should('exist')
     })
@@ -76,7 +76,7 @@ describe('Lisboa page', () => {
     it('The modal should close when clicking on the X', () => {
             
         cy.get(':nth-child(4) > .nav-link').click()
-        cy.get('[onclick="Resetlisboa()"]').click()
+        cy.get('[onclick="Resetlisbon()"]').click()
         cy.wait(500);
         cy.get('.close > span').click()
         cy.get('.modal-content').should('not.be.visible');
@@ -85,7 +85,7 @@ describe('Lisboa page', () => {
     it('Warning message when the fields are not filled', () => {
             
         cy.get(':nth-child(4) > .nav-link').click()
-        cy.get('[onclick="Resetlisboa()"]').click()
+        cy.get('[onclick="Resetlisbon()"]').click()
         cy.clickOnCalculateButton()
         cy.get('#alert1 > p').should('contain', 'Fill the empty fields.')
     })

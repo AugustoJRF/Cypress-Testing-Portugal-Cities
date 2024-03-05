@@ -14,7 +14,7 @@ describe('Homepage', () => {
             .should('contain', 'Home')
             .should('contain', 'Porto')
             .should('contain', 'Braga')
-            .should('contain', 'Lisboa')
+            .should('contain', 'Lisbon')
         cy.get('#carouselExampleCaptions').should('exist')
     })
 
@@ -50,7 +50,7 @@ describe('Homepage', () => {
         cy.get('.fas.fa-angle-right').click()
         cy.get('#carouselExampleCaptions')
             .find('.carousel-item.active')
-            .should('contain', 'Lisboa')
+            .should('contain', 'Lisbon')
             .find('img[src="Cities Pictures/lisboa1.jpg"]')
             .should('be.visible')
     })
