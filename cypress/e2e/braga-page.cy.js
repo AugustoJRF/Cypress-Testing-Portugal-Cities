@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-describe('Braga page', () => { 
-    
-    beforeEach(() => {
-        cy.visit('/')
-    })
+beforeEach(() => {
+    cy.visit('/')
+})
 
-    it('Check Braga first container information', () => {
+describe('Verify the content on the Braga page', () => { 
+    
+    it('Braga first container information', () => {
     
         cy.get(':nth-child(3) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(1)')
@@ -16,7 +16,7 @@ describe('Braga page', () => {
             .should('be.visible')
     })
         
-    it('Check Braga second container information', () => {
+    it('Braga second container information', () => {
     
         cy.get(':nth-child(3) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(2)')
@@ -26,7 +26,7 @@ describe('Braga page', () => {
             .should('be.visible')
     })
             
-    it('Check Braga third container information', () => {
+    it('Braga third container information', () => {
     
         cy.get(':nth-child(3) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(3)')
@@ -36,7 +36,7 @@ describe('Braga page', () => {
             .should('be.visible')
     })
     
-    it('Check Braga fourth container information', () => {
+    it('Braga fourth container information', () => {
     
         cy.get(':nth-child(3) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(4)')
@@ -45,6 +45,9 @@ describe('Braga page', () => {
             .find('img[src="Cities Pictures/braga5.jpg"]')
             .should('be.visible')
     })
+})
+
+describe('Verify the modal to calculate the average price on the Braga page', () => { 
 
     it('Calculate the average price to visit Braga', () => {
 

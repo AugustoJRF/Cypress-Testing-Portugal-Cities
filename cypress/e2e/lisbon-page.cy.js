@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-describe('Lisbon page', () => {
-    
-    beforeEach(() => {
-        cy.visit('/')
-    })
+beforeEach(() => {
+    cy.visit('/')
+})
 
-    it('Check Lisbon first container information', () => {
+describe('Verify the content on the Lisbon page', () => {
+
+    it('Lisbon first container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(1)')
@@ -16,7 +16,7 @@ describe('Lisbon page', () => {
             .should('be.visible')
     })
         
-    it('Check Lisbon second container information', () => {
+    it('Lisbon second container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(2)')
@@ -26,7 +26,7 @@ describe('Lisbon page', () => {
             .should('be.visible')
     })
             
-    it('Check Lisbon third container information', () => {
+    it('Lisbon third container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(3)')
@@ -36,7 +36,7 @@ describe('Lisbon page', () => {
             .should('be.visible')
     })
     
-    it('Check Lisbon fourth container information', () => {
+    it('Lisbon fourth container information', () => {
     
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(4)')
@@ -45,6 +45,9 @@ describe('Lisbon page', () => {
             .find('img[src="Cities Pictures/lisboa5.jpg"]')
             .should('be.visible')
     })
+})
+
+describe('Verify the modal to calculate the average price on the Lisbon page', () => { 
 
     it('Calculate the average price to visit Lisbon', () => {
 

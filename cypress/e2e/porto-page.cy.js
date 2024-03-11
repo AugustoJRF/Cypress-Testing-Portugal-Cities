@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-describe('Porto page', () => {
+beforeEach(() => {
+    cy.visit('/')
+}) 
 
-    beforeEach(() => {
-        cy.visit('/')
-    }) 
+describe('Verify the content on the Porto page', () => {
 
-    it('Check Porto first container information', () => {
+    it('Porto first container information', () => {
 
         cy.get(':nth-child(2) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(1)')
@@ -16,7 +16,7 @@ describe('Porto page', () => {
             .should('be.visible')
     })
         
-    it('Check Porto second container information', () => {
+    it('Porto second container information', () => {
 
         cy.get(':nth-child(2) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(2)')
@@ -26,7 +26,7 @@ describe('Porto page', () => {
             .should('be.visible')
     })
             
-    it('Check Porto third container information', () => {
+    it('Porto third container information', () => {
 
         cy.get(':nth-child(2) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(3)')
@@ -36,7 +36,7 @@ describe('Porto page', () => {
             .should('be.visible')
     })
 
-    it('Check Porto fourth container information', () => {
+    it('Porto fourth container information', () => {
 
         cy.get(':nth-child(2) > .nav-link').click()
         cy.get('.pb-3 > .container > :nth-child(4)')
@@ -45,6 +45,9 @@ describe('Porto page', () => {
             .find('img[src="Cities Pictures/porto5.jpg"]')
             .should('be.visible')
     })
+})
+
+describe('Verify the modal to calculate the average price on the Porto page', () => { 
 
     it('Calculate the average price to visit Porto', () => {
 
@@ -79,7 +82,7 @@ describe('Porto page', () => {
         cy.get('[onclick="Resetporto()"]').click()
         cy.wait(500)
         cy.get('.close > span').click()
-        cy.get('.modal-content').should('not.be.visible');
+        cy.get('.modal-content').should('not.be.visible')
     })
 
     it('Warning message when the fields are not filled', () => {
